@@ -2,87 +2,40 @@
 //Demonstrate default, parameterized and copy constructor to initialize
 //members.
 
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 
-class Rectangle
-{
-		int length;
-		int breadth;
-		public:
-			Rectangle( int l, int b )
-			{
-				length = l;
-				breadth = b;
-			}
-			int getArea()
-			{
-				return length * breadth;
-			}
+class rectangle{
+int length, width;
+public:
+rectangle(){ // Default constructor
+length=0;
+width=0;
+}
+rectangle(int x, int y){// Parameterized constructor
+
+length = x;
+width = y;
+}
+rectangle(rectangle &_r){ // Copy constructor
+length = _r.length;
+width = _r.width;
+}
 };
+
+Program: Types of Constructor
+
+This is constructor
+overloading
+
+Object oriented programming with c++, Pranav Verma
 
 int main()
 {
-	Rectangle rt( 7, 4 );
-	cout << "Area : " << rt.getArea() << endl;
-	return 0;
+rectangle r1; // Invokes default constructor
+rectangle r2(10,20); // Invokes parameterized constructor
+rectangle r3(r2); // Invokes copy constructor
 }
 
 
-
-
-#include <iostream>
-
-using namespace std;
-
-class Rectangle
-{
-		int length;
-		int breadth;
-		public:
-			Rectangle( int l, int b )
-			{
-				length = l;
-				breadth = b;
-			}
-			int getArea()
-			{
-				return length * breadth;
-			}
-};
-
-int main()
-{
-	Rectangle rt( 7, 4 );
-	cout << "Area : " << rt.getArea() << endl;
-	return 0;
-}
-
-
-#include <iostream>
-
-using namespace std;
-
-class Rectangle
-{
-		int length;
-		int breadth;
-		public:
-			Rectangle( int l, int b )
-			{
-				length = l;
-				breadth = b;
-			}
-			int getArea()
-			{
-				return length * breadth;
-			}
-};
-
-int main()
-{
-	Rectangle rt( 7, 4 );
-	cout << "Area : " << rt.getArea() << endl;
-	return 0;
-}
+ 
